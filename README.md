@@ -5,7 +5,8 @@
 
 
 This is the repository containing the OpenScoutingArchitecture standard, as
-markdown text, in this README document.
+markdown text, in this README document. This repo also contains the glue code
+provided by the OSA for, for example, converting data between different formats.
 
 
 # OpenScoutingArchitecture specification v0.0.1
@@ -44,6 +45,12 @@ organizational structure for a system to receive and analyze data from FRC
 matches, henceforth referred to as a "scouting system". What follows in this
 document is a list of requirements and definitions to make those requirements
 more clear.
+
+
+## Additional Resources
+The repository's contents aside from this document contain utility code to bring
+pieces of code together, like standard data formats and conversion functionality
+to use these formats.
 
 
 ## Conforming Implementations
