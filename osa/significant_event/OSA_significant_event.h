@@ -12,6 +12,7 @@
 #endif
 
 #include <OSA/event_types/OSA_event_types.h>
+#include <OSA/misc/types.h>
 
 struct OSA_internal_significant_event {
 
@@ -21,7 +22,7 @@ struct OSA_internal_significant_event {
     struct {
         union {
             unsigned alliance;
-            unsigned team;
+            OSA_teamnum teamnum;
         } as;
         enum {
             OSA_TEAM,
@@ -31,7 +32,7 @@ struct OSA_internal_significant_event {
 
     unsigned seconds_before_game_end;
 
-    unsigned team_collecting_data;
+    OSA_teamnum team_collecting_data;
 
 };
 
