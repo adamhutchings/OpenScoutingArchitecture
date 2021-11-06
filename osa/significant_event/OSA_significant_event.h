@@ -14,6 +14,10 @@
 #include <OSA/event_types/OSA_event_types.h>
 #include <OSA/misc/types.h>
 
+typedef unsigned OSA_scout_id;
+
+#define OSA_NO_SCOUT_ID ((OSA_scout_id) 0)
+
 struct OSA_internal_significant_event {
 
     OSA_event_type                   event_type;
@@ -33,6 +37,7 @@ struct OSA_internal_significant_event {
     unsigned seconds_before_game_end;
 
     OSA_teamnum team_collecting_data;
+    OSA_scout_id scout_id;
 
 };
 
