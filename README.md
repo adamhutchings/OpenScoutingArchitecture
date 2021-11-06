@@ -117,6 +117,40 @@ collected in a given match. This type is defined by this standard in one of the
 following files depending on implementation language:
     - C / C++ - OSA/significant_event/OSA_significant_event.h
 
+2.5
+- Each conforming "match collection" implementation may choose to provide a
+unique and meaningful scout ID to each "significant event" collected. In the
+case that no such information exists, whether from some data being missing or
+because the implementation either does not use scout IDs or scout IDs are
+meaningless, the scout ID for each data point MUST be set to what the constant
+OSA_NO_SCOUT_ID is defined is. Conforming implementations may NOT let
+OSA_NO_SCOUT_ID be equal to any valid and meaningful scout ID.
+
+2.6
+- Each conforming "match collection" implementation shall provide:
+    - 2.6.1 A user interface which collects data primarily during the match. (
+        There may be opportunities to input data immediately after the match
+        ends but the UI should be tied to the game in real time.)
+    - 2.6.2 There shall be UI components sufficient that any valid "significant
+    event" may be created during the game, with the timestamp determined by the
+    real time when such a UI component is activated, and the time when the
+    application was informed that the game began.
+    - 2.6.3 No invalid "significant event" shall be passed from the "match
+    collection" into the "backend", and all invalid data points must be
+    corrected as elucidated below.
+        - 2.6.3 In the event that a game has multiple stages with different
+        events possible during each, it shall be possible to enter any event
+        type with any timestamp in the front-end of the "match collection", so
+        that if data is not all the way entered from one stage when the next
+        stage begins, it is still possible to enter the data in a close 
+        approximation of real time. It is the responsibility of the rest of
+        "match collection" to correct the data.
+        - 2.6.3.1 Should there be a set range of times in which a particular
+        event type may occur, the "match collection" shall clamp all
+        out-of-bounds values to the nearest bound.
+        - 2.6.3.2 Any other invalid data entered shall be corrected to be valid
+        in an implementation-dependent manner.
+
 ## Implementation Setting (???)
 x.1
 - The implementation setting file shall define either in itself or in an
