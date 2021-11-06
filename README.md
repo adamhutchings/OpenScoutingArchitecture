@@ -153,7 +153,12 @@ OSA_NO_SCOUT_ID be equal to any valid and meaningful scout ID.
 
 ## Implementation Setting (???)
 x.1
-- The implementation setting file shall define either in itself or in an
-accompanying file the following variables, all of integer type and none equal:
-    - OSA_team_num (this is NOT the team number of the implementing team)
-    - [TODO]
+- The implementation setting file shall be in the YAML format, and have a name
+in the following format: [team name]-[team number]-[year of system].yml. (For
+example, "Citrus Circuits-1678-2020.yml" would be such a name, without the
+quotation marks.)
+x.2
+- The implementation setting file shall define the following data as a set of
+key-value pairs, wit the value always an integer value:
+    - osa_version: the latest OSA version the implementation is compliant with
+    - osa_scout_id: whether scout IDs are used (0 or 1)
