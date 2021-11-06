@@ -130,11 +130,11 @@ OSA_NO_SCOUT_ID be equal to any valid and meaningful scout ID.
 - Each conforming "match collection" implementation shall provide:
     - 2.6.1 A user interface which collects data primarily during the match. (
         There may be opportunities to input data immediately after the match
-        ends but the UI should be tied to the game in real time.)
-    - 2.6.2 There shall be UI components sufficient that any valid "significant
+        ends but the interface should be tied to the game in real time.)
+    - 2.6.2 There shall be an interface sufficient that any valid "significant
     event" may be created during the game, with the timestamp determined by the
-    real time when such a UI component is activated, and the time when the
-    application was informed that the game began.
+    real time when such an interface component is activated, and the time when
+    the application was informed that the game began.
     - 2.6.3 No invalid "significant event" shall be passed from the "match
     collection" into the "backend", and all invalid data points must be
     corrected as elucidated below.
@@ -159,6 +159,7 @@ example, "Citrus Circuits-1678-2020.yml" would be such a name, without the
 quotation marks.)
 x.2
 - The implementation setting file shall define the following data as a set of
-key-value pairs, wit the value always an integer value:
+key-value pairs, with the value always an integer value:
     - osa_version: the latest OSA version the implementation is compliant with
     - osa_scout_id: whether scout IDs are used (0 or 1)
+    - osa_game_year: which year the game is from
